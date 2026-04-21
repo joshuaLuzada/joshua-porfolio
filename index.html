@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Joshua Luzada | E-Portfolio</title>
+    <title>Joshua Luzada | Neon Tech Portfolio</title>
     <!-- Google Fonts + Tailwind + Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,17 +18,13 @@
     </script>
     <style>
         /* Neon Cyber Theme - Cyan & Electric Blue */
-        * {
-            cursor: default;
-        }
+        * { cursor: default; }
         body {
             background-color: #010101;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
-        .font-tech {
-            font-family: 'Space Grotesk', monospace;
-        }
+        .font-tech { font-family: 'Space Grotesk', monospace; }
         .neon-cyan {
             color: #00FFFF;
             text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF88, 0 0 20px #00FFFF44;
@@ -84,9 +80,7 @@
             width: max-content;
             animation: scrollTech 26s linear infinite;
         }
-        .marquee-track:hover {
-            animation-play-state: paused;
-        }
+        .marquee-track:hover { animation-play-state: paused; }
         @keyframes scrollTech {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -106,7 +100,7 @@
             box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
             outline: none;
         }
-        /* Chatbot styles */
+        /* Chatbot */
         .chatbot-container {
             position: fixed;
             bottom: 24px;
@@ -125,9 +119,7 @@
             box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.6), 0 6px 18px black;
             transition: 0.2s;
         }
-        .chat-toggle:hover {
-            transform: scale(1.05);
-        }
+        .chat-toggle:hover { transform: scale(1.05); }
         .chat-window {
             position: absolute;
             bottom: 80px;
@@ -267,9 +259,7 @@
             font-size: 0.85rem;
             outline: none;
         }
-        .chat-input-area input:focus {
-            border-color: #00FFFF;
-        }
+        .chat-input-area input:focus { border-color: #00FFFF; }
         .chat-input-area button {
             background: #00FFFF;
             border: none;
@@ -279,9 +269,7 @@
             cursor: pointer;
             transition: 0.2s;
         }
-        .chat-input-area button:hover {
-            background: #44FFFF;
-        }
+        .chat-input-area button:hover { background: #44FFFF; }
         @media (max-width: 480px) {
             .chat-window { width: 320px; height: 480px; right: 0; bottom: 70px; }
         }
@@ -299,6 +287,22 @@
             z-index: 10;
         }
         a, .clickable { cursor: pointer; }
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #00FFFF;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+        }
+        @media (max-width: 768px) {
+            .profile-img { width: 160px; height: 160px; }
+        }
     </style>
 </head>
 <body class="text-white circuit-bg">
@@ -319,109 +323,119 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="grid md:grid-cols-2 gap-12 items-center py-6 md:py-12">
-            <div class="space-y-5">
-                <div class="inline-flex items-center gap-2 bg-black/40 border border-[#00FFFF]/40 rounded-full px-4 py-1.5 text-xs font-mono">
+        <!-- Hero Section: Picture on top for mobile/tablet, on right for desktop -->
+        <section class="grid md:grid-cols-2 gap-8 md:gap-12 items-center py-6 md:py-12">
+            <!-- Image Container - appears first on mobile/tablet, second on desktop -->
+            <div class="flex flex-col items-center space-y-4 md:order-2">
+                <img src="joshua.jpg" alt="Joshua Luzada" class="profile-img">
+                <p class="text-[#00FFFF] font-mono text-sm border border-[#00FFFF]/30 inline-block px-4 py-1 rounded-full backdrop-blur-sm">
+                    <i class="fas fa-map-marker-alt mr-1"></i> Cebu, Philippines
+                </p>
+            </div>
+            <!-- Text Content - appears second on mobile/tablet, first on desktop -->
+            <div class="space-y-5 text-center md:text-left md:order-1">
+                <div class="inline-flex items-center gap-2 bg-black/40 border border-[#00FFFF]/40 rounded-full px-4 py-1.5 text-xs font-mono mx-auto md:mx-0">
                     <i class="fas fa-terminal text-[#00FFFF]"></i> <span>system.ready() // eager to learn</span>
                 </div>
-                <h1 class="text-6xl md:text-7xl font-bold leading-tight font-tech">
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight font-tech">
                     <span class="text-white">Crafting </span><span class="neon-cyan">Digital</span><br>
                     <span class="bg-gradient-to-r from-white to-[#00FFFF] bg-clip-text text-transparent">Experiences</span>
                 </h1>
-                <p class="text-gray-300 text-lg max-w-lg font-light leading-relaxed">
+                <p class="text-gray-300 text-base sm:text-lg max-w-lg font-light leading-relaxed mx-auto md:mx-0">
                     Full-Stack & Mobile Dev • 3D & AI Integration • <span class="text-[#00FFFF] font-bold">"small knowledge, infinite curiosity"</span>
                 </p>
-                <div class="flex flex-wrap gap-3 pt-2">
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start pt-2">
                     <div class="flex items-center gap-2 bg-black/40 rounded-full px-4 py-2 text-sm border border-white/10"><i class="fas fa-microchip text-[#00FFFF]"></i> AI Engineer</div>
                     <div class="flex items-center gap-2 bg-black/40 rounded-full px-4 py-2 text-sm border border-white/10"><i class="fas fa-cube text-[#00FFFF]"></i> 3D Interactive</div>
                 </div>
-                <div class="pt-4">
-                    <a href="#contact" class="btn-neon px-8 py-3 rounded-full inline-flex items-center gap-2 text-sm uppercase tracking-wider font-bold"><i class="fas fa-bolt"></i> Hire Me <i class="fas fa-arrow-right"></i></a>
+                <div class="pt-2">
+                    <div class="inline-flex items-center gap-2 bg-black/60 rounded-full px-4 py-2 text-sm border border-[#00FFFF]/50">
+                        <i class="fas fa-graduation-cap text-[#00FFFF]"></i>
+                        <span class="font-mono text-xs sm:text-sm">BSIT Graduate | Asian College of Technology</span>
+                    </div>
                 </div>
-            </div>
-            <div class="hidden md:block relative">
-                <div class="w-72 h-72 rounded-full bg-[#00FFFF]/10 blur-3xl absolute -z-10 right-0 top-10"></div>
-                <div class="text-right font-mono text-sm text-[#00FFFF]/80 border border-[#00FFFF]/30 p-3 rounded-2xl backdrop-blur-sm">const passion = 'innovate';<br>while(true) { learn(); build(); }</div>
+                <div class="pt-4">
+                    <a href="#contact" class="btn-neon px-6 sm:px-8 py-3 rounded-full inline-flex items-center gap-2 text-sm uppercase tracking-wider font-bold"><i class="fas fa-bolt"></i> Hire Me <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </section>
 
-        <!-- Tech Arsenal (horizontal marquee) -->
-        <section id="skills" class="py-16 md:py-24">
-            <div class="text-center mb-12">
+        <!-- Tech Arsenal -->
+        <section id="skills" class="py-12 md:py-20">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-5xl font-bold font-tech"><span class="neon-cyan">{</span> tech.arsenal <span class="neon-cyan">}</span></h2>
                 <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#00FFFF] to-transparent mx-auto mt-3"></div>
             </div>
             <div class="marquee-wrapper my-5">
                 <div class="marquee-track">
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-figma"></i> Figma</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-html5"></i> HTML5</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-css3-alt"></i> Tailwind/CSS3</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-php"></i> PHP/Laravel</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-js"></i> JavaScript/TS</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-react"></i> React.js</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-react"></i> React Native/Expo</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fas fa-database"></i> MySQL/Firebase</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fas fa-cube"></i> Three.js/3D</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-figma"></i> Figma</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-html5"></i> HTML5</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-css3-alt"></i> Tailwind/CSS3</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-php"></i> PHP/Laravel</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-js"></i> JavaScript/TS</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-react"></i> React.js</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fab fa-react"></i> React Native/Expo</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fas fa-database"></i> MySQL/Firebase</div>
-                    <div class="skill-badge px-5 py-3 rounded-full flex items-center gap-2"><i class="fas fa-cube"></i> Three.js/3D</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-figma"></i> Figma</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-css3-alt"></i> Tailwind/CSS3</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-php"></i> PHP/Laravel</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-js"></i> JavaScript/TS</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-react"></i> React.js</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-react"></i> React Native/Expo</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-database"></i> MySQL/Firebase</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-cube"></i> Three.js/3D</div>
+                    <!-- duplicate -->
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-figma"></i> Figma</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-css3-alt"></i> Tailwind/CSS3</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-php"></i> PHP/Laravel</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-js"></i> JavaScript/TS</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-react"></i> React.js</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fab fa-react"></i> React Native/Expo</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-database"></i> MySQL/Firebase</div>
+                    <div class="skill-badge px-4 py-2 rounded-full flex items-center gap-2"><i class="fas fa-cube"></i> Three.js/3D</div>
                 </div>
             </div>
-            <div class="text-center mt-10">
-                <span class="inline-block bg-black/50 rounded-full px-6 py-2 text-sm border border-[#00FFFF]/40"><i class="fas fa-code-branch text-[#00FFFF] mr-2"></i> "eager to learn & architect next-gen solutions"</span>
+            <div class="text-center mt-8">
+                <span class="inline-block bg-black/50 rounded-full px-5 py-2 text-xs border border-[#00FFFF]/40"><i class="fas fa-code-branch text-[#00FFFF] mr-2"></i> "eager to learn & architect next-gen solutions"</span>
             </div>
         </section>
 
         <!-- Projects -->
         <section id="projects" class="py-12 md:py-20">
-            <div class="text-center mb-12">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-5xl font-bold font-tech"><span class="neon-cyan">[</span> recent.projects <span class="neon-cyan">]</span></h2>
                 <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#00FFFF] to-transparent mx-auto mt-3"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass-card rounded-2xl p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="glass-card rounded-2xl p-5 md:p-6">
                     <div class="flex justify-between"><div class="bg-[#00FFFF]/15 p-3 rounded-xl"><i class="fas fa-chart-line text-3xl text-[#00FFFF]"></i></div><span class="text-xs font-mono bg-black/50 px-3 py-1 rounded-full text-[#00FFFF]">2025</span></div>
-                    <h3 class="text-2xl font-bold mt-5 font-tech">Sales & Inventory 2025</h3>
+                    <h3 class="text-xl md:text-2xl font-bold mt-4 font-tech">Sales & Inventory 2025</h3>
                     <p class="text-gray-300 text-sm mt-2">ERP-light with AI demand prediction, real-time analytics, Laravel & Tailwind.</p>
                     <div class="flex gap-2 mt-4 flex-wrap"><span class="text-xs bg-white/10 px-2 py-1 rounded">Laravel</span><span class="text-xs bg-white/10 px-2 py-1 rounded">AI insights</span></div>
                 </div>
-                <div class="glass-card rounded-2xl p-6">
+                <div class="glass-card rounded-2xl p-5 md:p-6">
                     <div class="flex justify-between"><div class="bg-[#00FFFF]/15 p-3 rounded-xl"><i class="fas fa-heartbeat text-3xl text-[#00FFFF]"></i></div><span class="text-xs font-mono bg-black/50 px-3 py-1 rounded-full text-[#00FFFF]">2026</span></div>
-                    <h3 class="text-2xl font-bold mt-5 font-tech">Mobile Fitness App</h3>
+                    <h3 class="text-xl md:text-2xl font-bold mt-4 font-tech">Mobile Fitness App</h3>
                     <p class="text-gray-300 text-sm mt-2">Expo Go SDK55 • AI coach, workout tracking, realtime sync.</p>
                     <div class="flex gap-2 mt-4 flex-wrap"><span class="text-xs bg-white/10 px-2 py-1 rounded">React Native</span><span class="text-xs bg-white/10 px-2 py-1 rounded">Expo 55</span></div>
                 </div>
-                <div class="glass-card rounded-2xl p-6">
+                <div class="glass-card rounded-2xl p-5 md:p-6">
                     <div class="flex justify-between"><div class="bg-[#00FFFF]/15 p-3 rounded-xl"><i class="fas fa-search text-3xl text-[#00FFFF]"></i></div><span class="text-xs font-mono bg-black/50 px-3 py-1 rounded-full text-[#00FFFF]">2026</span></div>
-                    <h3 class="text-2xl font-bold mt-5 font-tech">Search and Play</h3>
+                    <h3 class="text-xl md:text-2xl font-bold mt-4 font-tech">Search and Play</h3>
                     <p class="text-gray-300 text-sm mt-2">Semantic search with vector embeddings & OpenAI.</p>
                     <div class="flex gap-2 mt-4 flex-wrap"><span class="text-xs bg-white/10 px-2 py-1 rounded">React</span><span class="text-xs bg-white/10 px-2 py-1 rounded">AI/NLP</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- Get in Touch - with email submission via mailto -->
-        <section id="contact" class="py-16 md:py-24">
-            <div class="glass-card rounded-3xl p-8 md:p-12 border-2 border-[#00FFFF]/40">
+        <!-- Get in Touch -->
+        <section id="contact" class="py-12 md:py-20">
+            <div class="glass-card rounded-3xl p-6 md:p-10 border-2 border-[#00FFFF]/40">
                 <div class="text-center mb-8">
-                    <h2 class="text-4xl md:text-5xl font-bold font-tech"><span class="neon-cyan">get_in_touch</span><span class="text-white">();</span></h2>
+                    <h2 class="text-3xl md:text-5xl font-bold font-tech"><span class="neon-cyan">get_in_touch</span><span class="text-white">();</span></h2>
                     <div class="w-32 h-[2px] bg-[#00FFFF] mx-auto mt-3"></div>
                 </div>
-                <div class="grid md:grid-cols-2 gap-10 items-start">
-                    <div class="space-y-5">
-                        <a href="mailto:jluzada06@gmail.com" class="flex items-center gap-4 group transition hover:translate-x-1"><i class="fas fa-envelope text-2xl text-[#00FFFF]"></i><span class="font-mono text-lg group-hover:text-[#00FFFF]">jluzada06@gmail.com</span></a>
-                        <a href="https://github.com/joshualuzada" target="_blank" class="flex items-center gap-4 group transition hover:translate-x-1"><i class="fab fa-github text-2xl text-[#00FFFF]"></i><span class="font-mono text-lg group-hover:text-[#00FFFF]">github.com/joshualuzada</span></a>
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div class="space-y-5 text-center md:text-left">
+                        <a href="mailto:jluzada06@gmail.com" class="flex items-center justify-center md:justify-start gap-4 group transition hover:translate-x-1"><i class="fas fa-envelope text-2xl text-[#00FFFF]"></i><span class="font-mono text-base md:text-lg group-hover:text-[#00FFFF]">jluzada06@gmail.com</span></a>
+                        <a href="https://github.com/joshualuzada" target="_blank" class="flex items-center justify-center md:justify-start gap-4 group transition hover:translate-x-1"><i class="fab fa-github text-2xl text-[#00FFFF]"></i><span class="font-mono text-base md:text-lg group-hover:text-[#00FFFF]">github.com/joshualuzada</span></a>
                         <div class="pt-4 text-gray-400 text-sm border-t border-[#00FFFF]/30"><i class="fas fa-bolt text-[#00FFFF] mr-1"></i> "small knowledge but unstoppable drive"</div>
                     </div>
-                    <!-- Contact Form - Sends email directly to Joshua's Gmail via mailto -->
-                    <form id="hireForm" class="space-y-5">
+                    <form id="hireForm" class="space-y-4">
                         <input type="text" id="name" class="tech-input w-full px-4 py-3 rounded-xl" placeholder="full_name" required>
                         <input type="email" id="email" class="tech-input w-full px-4 py-3 rounded-xl" placeholder="your_email" required>
                         <textarea id="message" rows="3" class="tech-input w-full px-4 py-3 rounded-xl" placeholder="opportunity / message..." required></textarea>
@@ -431,9 +445,9 @@
             </div>
         </section>
 
-        <footer class="pt-12 pb-8 text-center text-gray-400 text-sm border-t border-white/10 mt-4">
+        <footer class="pt-10 pb-6 text-center text-gray-400 text-sm border-t border-white/10 mt-4">
             <p class="flex justify-center gap-6 mb-4 text-xl"><a href="https://github.com/joshualuzada" target="_blank" class="hover:text-[#00FFFF] transition"><i class="fab fa-github"></i></a></p>
-            <p>© 2026 Joshua Luzada — E-Portfolio | Open for hire</p>
+            <p>© 2026 Joshua Luzada — Neon E-Portfolio | Open for hire</p>
         </footer>
     </div>
 
@@ -451,7 +465,7 @@
                     <div class="message-bubble">✨ Hey! I'm Joshua's AI concierge. Ask me about his skills, projects, or how to hire him. ✨</div>
                 </div>
             </div>
-            <div class="quick-replies" id="quickReplies">
+            <div class="quick-replies">
                 <button class="quick-btn" data-msg="Tell me about your skills">💻 Skills</button>
                 <button class="quick-btn" data-msg="What projects have you built?">🚀 Projects</button>
                 <button class="quick-btn" data-msg="How can I hire Joshua?">📞 Hire info</button>
@@ -465,7 +479,7 @@
     </div>
 
     <script>
-        // Chatbot logic (unchanged, works perfectly)
+        // Chatbot
         const toggle = document.getElementById('chatToggle');
         const win = document.getElementById('chatWindow');
         const closeBtn = document.getElementById('closeChatBtn');
@@ -552,35 +566,25 @@
             });
         });
 
-        // ----- CONTACT FORM: Send email directly to jluzada06@gmail.com via mailto -----
+        // Contact form -> opens email client
         document.getElementById('hireForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
-            
             if (!name || !email || !message) {
-                alert('Please fill in all fields before sending.');
+                alert('Please fill in all fields.');
                 return;
             }
-            
-            // Create email subject and body
             const subject = `Portfolio Inquiry from ${name}`;
             const body = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
-            
-            // Open default mail client with pre-filled recipient, subject, and body
             window.location.href = `mailto:jluzada06@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-            
-            // Optional: show a confirmation alert
             alert(`Thank you, ${name}! Your email client will open. Please send the message to complete your inquiry.`);
-            
-            // Reset form
             this.reset();
         });
     </script>
 
-    <!-- Three.js Scene - Neon Cyan Theme -->
+    <!-- Three.js Scene -->
     <script type="module">
         import * as THREE from 'three';
         const container = document.getElementById('canvas-container');
